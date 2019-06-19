@@ -18,6 +18,7 @@ module.exports = function(app) {
       var hndlbrsObj = {
         item: data
       };
+      console.log(hndlbrsObj);
       res.render("single", hndlbrsObj);
     });
   });
