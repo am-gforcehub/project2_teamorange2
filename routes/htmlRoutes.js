@@ -1,22 +1,28 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Load index page
+  // Load index page with all products for sale
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
+    db.Product.findAll({}).then(function(data) {
+      var hndlbrsObj = {
+        items: data
+      };
+      res.render("index", hndlbrsObj);
     });
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
+  // Load one product view!  ******************* USE THE DBEXAMPLE OBJECT TO SET UP HANDLEBARS TO INJECT ****************
+  app.get("/single", function(req, res) {
+    // where: { id: req.params.id  <-------- put this between the find brackets to specify what to grab from table
+    db.Product.findOne({}).then(function(dbExample) {
+      res.render("single");
+    });
+  });
+
+  // load the form for creating a new product
+  app.get("/new", function(req, res) {
+    db.Product.findOne({}).then(function(dbExample) {
+      res.render("new");
     });
   });
 

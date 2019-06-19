@@ -1,33 +1,92 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
+<header id="fh5co-header" role="banner">
+  <div class="container text-center">
+    <div id="fh5co-logo">
+      <a href="/"><img src="images/logo.png" alt="Present Free HTML5 Bootstrap Template"></a>
     </div>
+    <nav>
+      <ul>
+        <li><a href="/new">Must Sell</a></li>
+        <li class="active"><a href="/">Must Buy</a></li>
+      </ul>
+    </nav>
   </div>
-</div>
+</header>
+<!-- END #fh5co-header -->
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<div class="container-fluid pt70 pb70">
+  <div id="fh5co-projects-feed" class="fh5co-projects-feed clearfix masonry">
+    <div class="fh5co-project masonry-brick">
+      <a href="single.html">
+        <img src="images/img_20.jpg" alt="Free HTML5 by FreeHTML5.co">
+        <h2>Product</h2>
+      </a>
+    </div>
+
+    {{!-- **************************** REPLACE ALL BLOCKS WITH ITEM PARTIAL ************************************* --}}
+
+    {{#each items}}
+    {{> item}}
+    {{/each}}
+
+
+    {{!-- <div class="fh5co-project masonry-brick">
+      <a href="single.html">
+        <img src="images/img_19.jpg" alt="Free HTML5 by FreeHTML5.co">
+        <h2>Product</h2>
+      </a>
+    </div>
+    <div class="fh5co-project masonry-brick">
+      <a href="single.html">
+        <img src="images/img_3.jpg" alt="Free HTML5 by FreeHTML5.co">
+        <h2>Product</h2>
+      </a>
+    </div>
+    <div class="fh5co-project masonry-brick">
+      <a href="single.html">
+        <img src="images/img_4.jpg" alt="Free HTML5 by FreeHTML5.co">
+        <h2>Product</h2>
+      </a>
+    </div>
+    <div class="fh5co-project masonry-brick">
+      <a href="single.html">
+        <img src="images/img_5.jpg" alt="Free HTML5 by FreeHTML5.co">
+        <h2>Product</h2>
+      </a>
+    </div>
+    <div class="fh5co-project masonry-brick">
+      <a href="single.html">
+        <img src="images/img_6.jpg" alt="Free HTML5 by FreeHTML5.co">
+        <h2>Product</h2>
+      </a>
+    </div>
+    <div class="fh5co-project masonry-brick">
+      <a href="single.html">
+        <img src="images/img_7.jpg" alt="Free HTML5 by FreeHTML5.co">
+        <h2>Product</h2>
+      </a>
+    </div>
+    <div class="fh5co-project masonry-brick">
+      <a href="single.html">
+        <img src="images/img_8.jpg" alt="Free HTML5 by FreeHTML5.co">
+        <h2>Product</h2>
+      </a>
+    </div>
+    <div class="fh5co-project masonry-brick">
+      <a href="single.html">
+        <img src="images/img_9.jpg" alt="Free HTML5 by FreeHTML5.co">
+        <h2>Product</h2>
+      </a>
+    </div>
+    <div class="fh5co-project masonry-brick">
+      <a href="single.html">
+        <img src="images/img_10.jpg" alt="Free HTML5 by FreeHTML5.co">
+        <h2>Product</h2>
+      </a>
+    </div> --}}
+  </div>
+  <!--END .fh5co-projects-feed-->
+</div>
+<!-- END .container-fluid -->
+
 <script src="/js/index.js"></script>

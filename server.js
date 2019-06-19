@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config(); // FORGOT HOW TO USE DOTENV *************************************
 var express = require("express");
 var exphbs = require("express-handlebars");
 
