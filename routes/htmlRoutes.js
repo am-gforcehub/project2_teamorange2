@@ -12,18 +12,19 @@ module.exports = function(app) {
   });
 
   // Load one product view!  ******************* USE THE DBEXAMPLE OBJECT TO SET UP HANDLEBARS TO INJECT ****************
-  app.get("/single", function(req, res) {
-    // where: { id: req.params.id  <-------- put this between the find brackets to specify what to grab from table
-    db.Product.findOne({}).then(function(dbExample) {
-      res.render("single");
+  app.get("/item/:id", function(req, res) {
+    console.log(req.params.id);
+    db.Product.findOne({ where: { id: req.params.id } }).then(function(data) {
+      var hndlbrsObj = {
+        item: data
+      };
+      res.render("single", hndlbrsObj);
     });
   });
 
   // load the form for creating a new product
   app.get("/new", function(req, res) {
-    db.Product.findOne({}).then(function(dbExample) {
-      res.render("new");
-    });
+    res.render("new");
   });
 
   // Render 404 page for any unmatched routes
