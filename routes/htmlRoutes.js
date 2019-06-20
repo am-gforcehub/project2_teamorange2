@@ -1,23 +1,31 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Load index page
+  // Load index page with all products for sale
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
+    db.Product.findAll({}).then(function(data) {
+      var hndlbrsObj = {
+        items: data
+      };
+      res.render("index", hndlbrsObj);
     });
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
+  // Load one product view!  ******************* USE THE DBEXAMPLE OBJECT TO SET UP HANDLEBARS TO INJECT ****************
+  app.get("/item/:id", function(req, res) {
+    console.log(req.params.id);
+    db.Product.findOne({ where: { id: req.params.id } }).then(function(data) {
+      var hndlbrsObj = {
+        item: data
+      };
+      console.log(hndlbrsObj);
+      res.render("single", hndlbrsObj);
     });
+  });
+
+  // load the form for creating a new product
+  app.get("/new", function(req, res) {
+    res.render("new");
   });
 
   // Render 404 page for any unmatched routes
