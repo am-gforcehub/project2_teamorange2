@@ -13,6 +13,24 @@
 <div class="page-content">
     <h1 class="mb0">{{item.name}}</h1>
     <div class="meta"><span><a href="#">{{item.price}}</a>, <a href="#">USD</a></span></div>
-    <p>{{item.description}}</p>
+    <p id="description" data-item-id="{{item.id}}">{{item.description}}</p>
     <p><img src="{{item.photoUrl}}" alt="Free HTML5 by FreeHTML5.co"></p>
+    <button id="buy-button">Buy</button>
 </div>
+
+
+<script>
+    $("#buy-button").on("click", function (event) {
+        event.preventDefault();
+        var itemId = $("#description").attr("data-item-id");
+        console.log(itemId);
+        $.ajax("/api/" + itemId, {
+            type: "DELETE",
+            success: function (result) {
+                //$("#bought-modal").show();
+                console.log("item removed from storefront");
+
+            }
+        })
+    });
+</script>

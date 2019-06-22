@@ -12,33 +12,54 @@
 <!-- END #fh5co-header -->
 
 <div class="page-content">
-  <form>
+  <form id="new-item-form" enctype="multipart/form-data" method="post" action="fileupload">
     <div class="form-group">
       <label for="formGroupExampleInput"></label>
       <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name of Product">
     </div>
-    <form>
-      <div class="row">
-        <div class="col-sm-2">
-          <input type="text" class="form-control" placeholder="Price">
-        </div>
+    <div class="row">
+      <div class="col-sm-2">
+        <input type="text" class="form-control" id="price-input" placeholder="Price">
       </div>
-    </form>
+    </div>
     <div class="form-group">
       <label for="formGroupExampleInput2"></label>
       <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Description of Product">
     </div>
-  </form>
 
-  <p class="text-center"><img src="/images/person.jpg" alt="Free HTML5 by FreeHTML5.co"></p>
+    <p class="text-center"><img src="/images/person.jpg" alt="Free HTML5 by FreeHTML5.co"></p>
 
-  <form>
     <div class="form-group">
       <label for="exampleFormControlFile1">Upload Photo of 'Must Sell' Product</label>
-      <input type="file" class="form-control-file" id="exampleFormControlFile1">
+      <input type="text" class="form-control-file" id="exampleFormControlFile1">
     </div>
+
+    <button type="submit" id="submit-button">Submit</button>
   </form>
 </div>
 
+<script>
+  $("#new-item-form").on("submit", function (event) {
+    event.preventDefault();
+    console.log($("#exampleFormControlFile1"));
+    var newProduct = {
+      name: $("#formGroupExampleInput").val().trim(),
+      description: $("#formGroupExampleInput2").val().trim(),
+      price: $("#price-input").val().trim(),
+      photoUrl: $("#exampleFormControlFile1").val().trim()
+    };
+    console.log(newProduct);
+    $.ajax("/api/new", {
+      type: "POST",
+      data: newProduct
+    }).then(
+      function () {
+        console.log("created new Product");
+        //var url = __dirname + "/";
+        //window.open(url);
+      }
+    );
+  });
 
+</script>
 <!-- END .container-fluid -->
