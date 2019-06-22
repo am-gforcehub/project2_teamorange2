@@ -13,6 +13,31 @@
 <div class="page-content">
     <h1 class="mb0">{{item.name}}</h1>
     <div class="meta"><span><a href="#">{{item.price}}</a>, <a href="#">USD</a></span></div>
-    <p>{{item.description}}</p>
+    <p id="description" data-item-id="{{item.id}}">{{item.description}}</p>
     <p><img src="{{item.photoUrl}}" alt="Free HTML5 by FreeHTML5.co"></p>
+    <button id="buy-button">Buy</button>
 </div>
+
+<div class="modal" id='bought-modal' style="display: hidden">
+    <div class="modal-content">
+        <h3>We have received your order!</h3>
+        <h5>Be on the lookout for our package in the next 3-6 months!</h5>
+        <button onclick="window.location.href = '/';">Ok!</button>
+    </div>
+</div>
+
+<script>
+    $("#buy-button").on("click", function (event) {
+        event.preventDefault();
+        var itemId = $("#description").attr("data-item-id");
+        console.log(itemId);
+        $.ajax("/api/" + itemId, {
+            type: "DELETE",
+            success: function (result) {
+                $("#bought-modal").show();
+                console.log("item removed from storefront");
+            }
+        })
+    });
+
+</script>
