@@ -18,6 +18,13 @@
     <button id="buy-button">Buy</button>
 </div>
 
+<div class="modal" id='bought-modal' style="display: hidden">
+    <div class="modal-content">
+        <h3>We have received your order!</h3>
+        <h5>Be on the lookout for our package in the next 3-6 months!</h5>
+        <button onclick="window.location.href = '/';">Ok!</button>
+    </div>
+</div>
 
 <script>
     $("#buy-button").on("click", function (event) {
@@ -27,10 +34,10 @@
         $.ajax("/api/" + itemId, {
             type: "DELETE",
             success: function (result) {
-                //$("#bought-modal").show();
+                $("#bought-modal").show();
                 console.log("item removed from storefront");
-
             }
         })
     });
+
 </script>
