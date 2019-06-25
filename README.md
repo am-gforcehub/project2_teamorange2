@@ -1,4 +1,4 @@
-![image info](./public/images/pineapple-logo3.png)_MustBuy_
+![image info](./public/images/pineapple-logo3.png)
 
 ---
 
