@@ -278,3 +278,15 @@ figure {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+#new-modal,
+#bought-modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  display: hidden, table;
+  text-align: center;
+}
