@@ -9,7 +9,7 @@ Direct link to MustBuy [here](https://mustbuy.herokuapp.com/)
 - **Deployment Date** 06/26/2019
 - **Technologies Used** Node.js (JavaScript environment), JavaScript, freehtml5 (base framework), Bootstrap, CSS, Express.js (server framework), handlebars (templating engine), Heroku (cloud platform), JawsDB (Heroku database add-on), MySQL2 (a Relational Database Management System), Sequelize (Object Relational Mapping).
 
---
+---
 
 ### Description & Requirements
 
@@ -23,21 +23,11 @@ The following npm packages were installed:
 
    _Command Line: 'npm install dotenv'_
 
-2) **MySQL2:** `Node-MySQL2` offers better performance over `node-mysql`, and also supports these additional features.
+2) **MySQL2:** `Node-MySQL2` offers better performance over `node-mysql`, and also supports additional features MySQL doesn't.
 
-- [Prepared Statements](https://github.com/sidorares/node-mysql2/tree/master/documentation/Prepared-Statements.md)
-- [Promise Wrapper](https://github.com/sidorares/node-mysql2/tree/master/documentation/Promise-Wrapper.md)
-- [Authentication Switch](https://github.com/sidorares/node-mysql2/tree/master/documentation/Authentication-Switch.md)
-- [More Features](https://github.com/sidorares/node-mysql2/tree/master/documentation/Extras.md)
-- [MySQL Server](https://github.com/sidorares/node-mysql2/tree/master/documentation/MySQL-Server.md)
-- Pooling
-- SSL
-- MySQL Compression
-- Binary Log Protocol Client
+_Command Line: 'npm i mysql2'_
 
-  _Command Line: 'npm i mysql2'_
-
-3.  **Sexualize:** Sexualize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server. It features solid transaction support, relations, eager and lazy loading, read replication and more.
+3.  **Sequelize:** Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server. It features solid transaction support, relations, eager and lazy loading, read replication and more.
 
     _Command Line: 'npm i sequelize'_
 
@@ -49,15 +39,13 @@ The following npm packages were installed:
 
     _Command Line: 'npm i express-handlebars'_
 
-Read more about these methods [here](https://www.npmjs.com/)
-
---
+---
 
 ### Functionality
 
 It’s simple: At the top click on 'MustSell' to sell your stuff or scroll through all the available items and click on the item to buy!
 
----
+## ![View of Home Page](./public/images/home-page.png)
 
 - **Demo**
   See a full demo on the functionality of the app [here!]()
