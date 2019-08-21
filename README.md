@@ -4,7 +4,7 @@
 
 A full stack web application that serves as a storefront to sell your unwanted stuff and also offers the unique opportunity to buy someone else’s stuff at your leisure. People have asked us "Why the Pineapple?" The pineapple symbolizes friendship, hospitality, warmth and good luck! And as our client using MustBuy, our team would personally like to wish YOU all the pineapples this world has to offer!
 
-Direct link to MustBuy [here](https://mustbuy.herokuapp.com/)
+**Direct link to MustBuy [here](https://mustbuy.herokuapp.com/)**
 
 ---
 
